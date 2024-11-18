@@ -1,1 +1,20 @@
-<p>products-category-qp works!</p>
+<form [formGroup]="userForm" (submit)="addConnexion()">
+
+    <label > Name: <span class="required">*</span></label>
+        <input type="text" formControlName="name" >
+        <div *ngIf="name.invalid && name.touched" class="error">
+            First Name is required.
+          </div>
+
+    <div formArrayName="competences">
+    <h2>Compétences</h2>
+    <button (click)="addCompetence()" type="button">++</button>
+    <div *ngFor="let competence of competences.controls; let i=index">
+    <label for="competence-{{ i }}">Competence:</label>
+    <input id="competence-{{ i }}" type="text" [formControlName]="i">
+    </div>
+    </div>
+    <div class="div-btn">
+    <button type="submit" class="btn btn-primary">s’inscrire</button>
+    </div>
+    </form>

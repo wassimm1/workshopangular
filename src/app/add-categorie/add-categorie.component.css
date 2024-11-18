@@ -1,0 +1,9 @@
+.required {
+    color: rgb(255, 0, 230);
+  }
+  
+  .error {
+    color: rgb(81, 0, 255);
+    font-size: 0.9em;
+    margin-top: 4px;
+  }

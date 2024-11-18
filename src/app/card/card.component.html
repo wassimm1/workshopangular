@@ -1,0 +1,31 @@
+<p>card works!</p>
+<div >
+    <img
+      [src]="category.image"
+      [alt]="category.title"
+      class="img-fluid h-50 w-75"
+     
+    />
+    <h3 appHighlighter>{{category.title | uppercase}}</h3>
+    <p>{{ category.description }}</p>
+    <button  class="btn btn-primary" *ngIf="category.available else alt" 
+    [routerLink]="['/productcategorie',category.id]"
+    [queryParams]="{'name':category.title}">Voir produits</button>
+    
+    
+    <a class="nav-link" routerLink="detail"[queryParams]="{'desc':category.description}">Voir detail</a>
+    <ng-template #alt>
+        <h4 style="color: red;"  > Categorie non disponible</h4>
+    </ng-template>
+    {{ btnText }}
+    <div>
+      <button
+    class="btn btn-success"
+    *ngIf="category.available"
+    (click)="onAddToShortlist()"
+  >
+    Add to shortlist
+  </button>
+ 
+    </div>
+    

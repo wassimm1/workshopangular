@@ -8,7 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ListCategoriesComponent } from './list-categories/list-categories.component';
 import { HighlighterDirective } from './highlighter.directive';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterPipe } from './filter.pipe';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ProductCategoryComponent } from './product-category/product-category.component';
@@ -17,6 +17,8 @@ import { DetailsCategoryComponent } from './details-category/details-category.co
 import { ProfileModule } from './profile/profile.module';
 import { AddCategorieComponent } from './add-categorie/add-categorie.component';
 import { ProductModule } from './product/product.module';
+import { CardComponent } from './card/card.component';
+import { ListProductComponent } from './list-product/list-product.component';
 
 @NgModule({
   declarations: [
@@ -31,14 +33,17 @@ import { ProductModule } from './product/product.module';
     ProductCategoryComponent,
     ProductsCategoryQPComponent,
     DetailsCategoryComponent,
-    AddCategorieComponent
+    AddCategorieComponent,
+    CardComponent,
+    ListProductComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ProfileModule,
-    ProductModule
+    ProductModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
